@@ -66,10 +66,18 @@
     }
 
     async function sendMsg() {
+      if(liff.getContext().type !== "none") {
+        await liff.sendMessages([
+          {
+            "type": "stricker",
+            "stickerId": 1,
+            "packageId": 1
+          }
+        ])
+      }
     }
 
     function getContext() {
-      alert("getContext")
       document.getElementById("type").append(liff.getContext().type)
       document.getElementById("viewType").append(liff.getContext().viewType)
       document.getElementById("utouId").append(liff.getContext().utouId)
@@ -78,7 +86,6 @@
     }
 
     async function getUserProfile() {
-      alert("getUserProfile")
       const profile = await liff.getProfile()
       document.getElementById("pictureUrl").src = profile.pictureUrl
       document.getElementById("userId").append(profile.userId)
