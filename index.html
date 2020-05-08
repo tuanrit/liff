@@ -86,6 +86,7 @@
       document.getElementById("accessToken").append(liff.getAccessToken())
       document.getElementById("isInClient").append(liff.isInClient())
       if(liff.isInClient()){
+        alert("ซ่อน logout")
         document.getElementById("btnLogOut").style.display = "none"
       }else{
         document.getElementById("btnMsg").style.display = "none"
