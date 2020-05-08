@@ -110,7 +110,7 @@
       document.getElementById("statusMessage").append(profile.statusMessage)
       document.getElementById("displayName").append(profile.displayName)
       document.getElementById("displayName").append(profile.displayName)
-      document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
+      //document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
       alert("getUserProfile")
     }
 
@@ -138,6 +138,8 @@
         getUserProfile()
         getContext()
         getFriendship()
+      } else {
+        liff.login()
       }
       // createUniversalLink()
     }
